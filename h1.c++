@@ -12,6 +12,7 @@ int calcSum(int a, int b){
 double calcDiv(int a, int b){
     if(b == 0){
     cout << "Et voi jakaa nollalla"<<endl;
+    return 0;
     }
     double result = static_cast<double>(a)/b; //riittää, että toinen muutetaan liukuluvuksi
     cout << fixed << setprecision(2);
@@ -25,7 +26,7 @@ int retSum(int a, int b){
 
 float retDiv(int a, int b){
     if(b == 0){
-        throw std::runtime_error("Jakaja ei saa olla nolla");
+        throw runtime_error("Jakaja ei saa olla nolla");
     }
     return static_cast<float>(a)/b;
 }
@@ -45,8 +46,8 @@ int main() {
     try {
         result = retDiv(a, b);
         cout << a << "/" << b << " = " << result << endl;
-    } catch (runtime_error& e){
-        cout <<"error: "<< e.what()<< endl;
+    } catch (runtime_error& e){ //runtime_error tallentaa virheilmoituksen muuttujaan e
+        cout <<"error: "<< e.what()<< endl; //e.what() palauttaa virheilmoituksen
     }
     return 0;
 }
