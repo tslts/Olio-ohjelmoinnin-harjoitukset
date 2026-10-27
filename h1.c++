@@ -35,7 +35,7 @@ int main() {
     int a;
     int b;
     float result;
-    // Take input using cin
+
     cin >> a;
     cin >> b;
 
